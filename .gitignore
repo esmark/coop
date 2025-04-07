@@ -1,12 +1,11 @@
 /docker-compose.local.yml
+/compose.*
 /config/_local.*
 /node_modules/
 /usr/
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
+/.env.*
 /config/secrets/prod/prod.decrypt.private.php
 /public/components/
 /public/bundles/
