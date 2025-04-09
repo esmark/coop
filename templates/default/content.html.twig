@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Руководство{% endblock %}
+{% block title %}{{ 'Info'|trans }}{% endblock %}
 
 {% block content %}
     <br>
 
     <div class="row">
         <div class="col-xl-3">
-            <h2>Руководство</h2>
+            <h2>{{ 'Content'|trans }}</h2>
             {{ knp_menu_render('manual') }}
         </div>
 

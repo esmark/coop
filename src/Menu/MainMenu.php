@@ -35,12 +35,19 @@ class MainMenu
             ],
         ]);
 
+        /**
         $menu->addChild('Homepage', ['route' => 'homepage'])
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link py-0')
         ;
+        */
 
-        $menu->addChild('Advertisements', ['route' => 'offers'])
+        $menu->addChild('Info', ['route' => 'manual_index'])
+        ->setAttribute('class', 'nav-item')
+        ->setLinkAttribute('class', 'nav-link py-0')
+        ;
+
+        $menu->addChild('Offers', ['route' => 'offers'])
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link py-0')
         ;
@@ -58,7 +65,7 @@ class MainMenu
             $countActive = null;
         }
 
-        $menu->addChild('My deals', ['route' => 'deals', 'routeParameters' => ['tab' => $countNewIncoming ? 'in' : ($countActive ? 'active' : null) ]])
+        $menu->addChild('My orders', ['route' => 'deals', 'routeParameters' => ['tab' => $countNewIncoming ? 'in' : ($countActive ? 'active' : null) ]])
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link py-0')
             ->setExtra('countNewIncoming', $countNewIncoming)
@@ -66,16 +73,6 @@ class MainMenu
         ;
 
         $menu->addChild('Joint Purchases', ['route' => 'jp'])
-            ->setAttribute('class', 'nav-item')
-            ->setLinkAttribute('class', 'nav-link py-0')
-        ;
-
-        $menu->addChild('Manual', ['route' => 'manual_index'])
-            ->setAttribute('class', 'nav-item')
-            ->setLinkAttribute('class', 'nav-link py-0')
-        ;
-
-        $menu->addChild('Invite', ['route' => 'invite'])
             ->setAttribute('class', 'nav-item')
             ->setLinkAttribute('class', 'nav-link py-0')
         ;
@@ -103,7 +100,14 @@ class MainMenu
         }
 
         $menu->addChild('Geoposition', ['route' => 'profile_geoposition']);
+
+        $menu->addChild('Invite', ['route' => 'invite'])
+            ->setAttribute('class', 'nav-item')
+            ->setLinkAttribute('class', 'nav-link py-0')
+        ;
+
         $menu->addChild('Invited users', ['route' => 'profile_invited']);
+
         $menu->addChild('Change password', ['route' => 'profile_password']);
 
         return $menu;

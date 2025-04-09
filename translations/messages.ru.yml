@@ -3,6 +3,7 @@ Advertisements: Объявления
 Cancel: Отменить
 Category: Категория
 City: Город
+Content: Содержание
 Create: Создать
 Change password: Сменить пароль
 Code: Код
@@ -13,7 +14,7 @@ Current password: Текущий пароль
 Day: День
 Deal: Сделка
 Deals: Сделки
-Demand: Спрос
+Demand: Запрос
 Description: Описание
 Error: Ошибка
 Firstname: Имя
@@ -32,6 +33,7 @@ Is meat consumption: Потребление мяса?
 Is smoking: Курение?
 Image file: Картинка
 Image: Картинка
+Info: Информация
 Joint Purchases: Совместные закупки
 Lastname: Фамилия
 Manual: Руководство
@@ -39,6 +41,7 @@ Measure: Еденицы измерения
 Min quantity: Минимальное кол-во
 My deals: Мои сделки
 My geolocation: Моё местоположение
+My orders: Мои заказы
 Month: Месяц
 Name: Имя
 New password: Новый пароль
@@ -46,6 +49,8 @@ No: Нет
 Offer: Предложение
 Offers: Предложения
 Old password: Старый пароль
+Order: Заказ
+Orders: Заказы
 Parent category: Родительская категория
 Participant: Участник
 Participants: Участники

@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Спрос{% endblock %}
+{% block title %}{{ 'Demand'|trans }}{% endblock %}
 
 {% block content %}
 
     <a style="float: right; margin-top: 8px;" href="{{ path('demand_create') }}" class="btn btn-success">Добавить заявку на предложение</a>
 
-    <h1>Спрос</h1>
+    <h1>{{ 'Demand'|trans }}</h1>
 
-    <div class="alert alert-danger" role="alert">
+    <!--<div class="alert alert-danger" role="alert">
         Раздел в разработке, можно только добавить объявление, пока больше ничего сделать нельзя.
-    </div>
+    </div>//-->
 
     <table class="table table-bordered table-hover">
         <thead>
