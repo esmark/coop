@@ -4,9 +4,9 @@ services:
     db:
         restart: unless-stopped # always
         
-    pgbouncer:
-        restart: unless-stopped # always
-        
+#    pgbouncer:
+#        restart: unless-stopped # always
+    
     php-cli:
         restart: unless-stopped # always
         environment:

@@ -1,4 +1,4 @@
-FROM php:8.0.13-cli
+FROM php:8.3.19-cli
 
 RUN apt-get update && apt-get install -y \
     apt-utils \
@@ -30,7 +30,7 @@ RUN apt-get install -y \
     libfreetype6-dev \
     libjpeg-dev \
     libjpeg62-turbo-dev \
-    libpcre++-dev \
+#    libpcre++-dev \
     libpng-dev \
     libxpm-dev \
     libxml2-dev \

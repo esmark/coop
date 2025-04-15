@@ -11,18 +11,18 @@ services:
         volumes:
             - pg13:/var/lib/postgresql/data
 
-    pgbouncer:
-        image: pgbouncer/pgbouncer:latest
-        depends_on:
-            - db
-        environment: # https://gitlab.com/aztek-io/oss/containers/pgbouncer-container/-/blob/master/entrypoint.sh
-            DATABASES_HOST: db
-            DATABASES_PORT: 5432
-            DATABASES_USER: '${DB_USER}'
-            DATABASES_PASSWORD: '${DB_PASSWORD}'
-            DATABASES_DBNAME: '${DB_NAME}'
-            PGBOUNCER_POOL_MODE: transaction
-            PGBOUNCER_MAX_CLIENT_CONN: 1000
+#    pgbouncer:
+#        image: pgbouncer/pgbouncer:latest
+#        depends_on:
+#            - db
+#        environment: # https://gitlab.com/aztek-io/oss/containers/pgbouncer-container/-/blob/master/entrypoint.sh
+#            DATABASES_HOST: db
+#            DATABASES_PORT: 5432
+#            DATABASES_USER: '${DB_USER}'
+#            DATABASES_PASSWORD: '${DB_PASSWORD}'
+#            DATABASES_DBNAME: '${DB_NAME}'
+#            PGBOUNCER_POOL_MODE: transaction
+#            PGBOUNCER_MAX_CLIENT_CONN: 1000
 
 volumes:
     pg13:

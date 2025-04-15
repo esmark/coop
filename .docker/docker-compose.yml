@@ -18,28 +18,28 @@ services:
         volumes:
             - pg14:/var/lib/postgresql/data
 
-    pgbouncer:
-        image: pgbouncer/pgbouncer:latest
-        depends_on:
-            - db
-        environment:
-            DATABASES_HOST: db
-            DATABASES_PORT: 5432
-            DATABASES_USER: '${DB_USER}'
-            DATABASES_PASSWORD: '${DB_PASSWORD}'
-            DATABASES_DBNAME: '${DB_NAME}'
-            PGBOUNCER_POOL_MODE: transaction
-            PGBOUNCER_MAX_CLIENT_CONN: 1000
+#    pgbouncer:
+#        image: pgbouncer/pgbouncer:latest
+#        depends_on:
+#            - db
+#        environment:
+#            DATABASES_HOST: db
+#            DATABASES_PORT: 5432
+#            DATABASES_USER: '${DB_USER}'
+#            DATABASES_PASSWORD: '${DB_PASSWORD}'
+#            DATABASES_DBNAME: '${DB_NAME}'
+#            PGBOUNCER_POOL_MODE: transaction
+#            PGBOUNCER_MAX_CLIENT_CONN: 1000
 
     php-cli:
         build: ./php8-cli
         working_dir: '${WORKING_DIR}'
         stdin_open: true # docker run -i
         tty: true        # docker run -t
-        depends_on:
-            - pgbouncer
+#        depends_on:
+#            - pgbouncer
         environment:
-            DATABASE_URL: 'pgsql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:6432/${DB_NAME}?serverVersion=14.1&charset=utf8'
+            DATABASE_URL: 'pgsql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/${DB_NAME}?serverVersion=14.1&charset=utf8'
         volumes:
             - './../:${WORKING_DIR}'
             - ./../var/log/php_errors.log:/var/log/php_errors.log
@@ -52,10 +52,10 @@ services:
     php-fpm:
         build: ./php8-fpm
         working_dir: '${WORKING_DIR}'
-        depends_on:
-            - pgbouncer
+#        depends_on:
+#            - pgbouncer
         environment:
-            DATABASE_URL: 'pgsql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:6432/${DB_NAME}?serverVersion=14.1&charset=utf8'
+            DATABASE_URL: 'pgsql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:5432/${DB_NAME}?serverVersion=14.1&charset=utf8'
         volumes:
             - './../:${WORKING_DIR}'
             - ./../var/log/php-fpm_errors.log:/var/log/php-fpm_errors.log

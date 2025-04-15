@@ -7,9 +7,9 @@ services:
         ports:
             - '5444:5432'
 
-    pgbouncer:
-        ports:
-            - '6444:6432'
+#    pgbouncer:
+#        ports:
+#            - '6444:6432'
 
     nginx:
         volumes:
